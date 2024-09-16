@@ -1,0 +1,24 @@
+.masonry {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: repeat(2, 1fr);
+
+	@include media-breakpoint-up(lg) {
+		grid-template-columns: repeat(5, 1fr);
+	}
+
+	&__image-container {
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__inner-col {
+		@include media-breakpoint-down(lg) {
+			display: grid !important;
+			gap: 10px;
+			grid-column: span 2;
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}

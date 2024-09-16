@@ -1,0 +1,17 @@
+@import "variables";
+@import "bootstrap.scss";
+@import "./components/timeline-swiper";
+@import "./components/masonry";
+
+#root {
+	overflow-x: hidden;
+}
+
+body {
+	background-color: $gray-1;
+	font-family: Roboto;
+}
+
+.btn-link svg {
+	transform: rotate(0) #{"/* rtl:rotate(180deg) */"};
+}

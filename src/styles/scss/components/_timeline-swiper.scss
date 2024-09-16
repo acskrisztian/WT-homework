@@ -1,0 +1,135 @@
+.timeline-swiper {
+	margin: 0 -8px;
+	margin: 0 -10% 0 -16px #{"/* rtl: 0 -16px 0 -10% */"};
+	padding: 0 10% 0 16px #{"/* rtl: 0 16px 0 10% */"};
+	position: relative;
+
+	&::after {
+		background: linear-gradient(
+			to right,
+			transparent,
+			$gray-1 50%,
+			transparent
+		);
+		content: "";
+		height: 100%;
+		left: 90% #{"/* rtl: 0 */"};
+		position: absolute;
+		top: 0;
+		width: 10%;
+		z-index: 1;
+
+		@include media-breakpoint-up(lg) {
+			background: linear-gradient(to right, transparent, $gray-1 50%) #{"/*rtl:linear-gradient(to right, #{$gray-1} 50%, transparent ) */"};
+			left: 91% #{"/* rtl: -1% */"};
+		}
+	}
+
+	&__button-prev {
+		transform: rotate(180deg) #{"/* rtl:rotate(0) */"};
+	}
+
+	&__button-next {
+		transform: rotate(0) #{"/* rtl:rotate(180deg) */"};
+	}
+
+	.swiper-slide {
+		width: 306px;
+
+		@include media-breakpoint-up(lg) {
+			width: 358px;
+		}
+
+		&:not(:last-child) {
+			.timeline-swiper__date::after {
+				background: repeating-linear-gradient(
+					to right,
+					$gray-2 0,
+					$gray-2 10px,
+					transparent 10px,
+					transparent 20px
+				);
+				bottom: 20px;
+				content: "";
+				height: 1px;
+				left: 50% #{"/* rtl -20% */"};
+				position: absolute;
+				width: 100%;
+				z-index: -1;
+			}
+		}
+	}
+	.timeline-swiper__card {
+		padding: 12px;
+
+		&:hover {
+			box-shadow: none !important;
+		}
+
+		@include media-breakpoint-up(lg) {
+			border-radius: 12px !important;
+		}
+
+		img {
+			height: 115px;
+			object-fit: cover;
+		}
+
+		p {
+			-webkit-box-orient: vertical;
+			line-clamp: 3;
+			-webkit-line-clamp: 3;
+			display: -webkit-box;
+			overflow: hidden;
+			text-overflow: ellipsis;
+
+			@include media-breakpoint-up(lg) {
+				line-clamp: 4;
+				-webkit-line-clamp: 4;
+			}
+		}
+	}
+
+	&__date {
+		padding-top: 36px;
+		position: relative;
+		z-index: 1;
+
+		@include media-breakpoint-up(lg) {
+			padding-top: 98px;
+		}
+
+		&:before {
+			background: #b6b6b6;
+			content: "";
+			height: 20px;
+			left: 50%;
+			position: absolute;
+			top: 8px;
+			width: 1px;
+
+			@include media-breakpoint-up(lg) {
+				height: 82px;
+			}
+		}
+	}
+
+	.timeline-swiper__date-month {
+		font-size: 18px;
+
+		@include media-breakpoint-up(lg) {
+			font-size: 20px;
+		}
+	}
+
+	.timeline-swiper__date-year {
+		@include media-breakpoint-up(lg) {
+			font-size: 24px !important;
+		}
+	}
+
+	&__date-wrapper {
+		background-color: $gray-1;
+		padding: 0 4px;
+	}
+}

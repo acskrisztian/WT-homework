@@ -1,0 +1,23 @@
+$primary: #0254a7;
+$secondary: $gray-2;
+$light: #e0e0e0;
+$btn-font-size: 14px;
+$border-radius-lg: 12px;
+
+$container-max-widths: (
+	xl: 1204px,
+);
+
+$card-border-width: 0;
+
+$card-border-radius: 4px;
+
+$box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.12);
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+.mb-2 {
+	@include media-breakpoint-up(lg) {
+		margin-bottom: 12px !important;
+	}
+}
